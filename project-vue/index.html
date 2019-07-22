@@ -10,38 +10,17 @@
     <div id="app">
         <header class="header">
             <div class="logo">AS-shop</div>
-            <form action="#" method="post" class="search-form">
-                <input type="text" class="search-field" v-model="searchLine">
-                <button class="btn-search" type="submit" @click.prevent="filter">
-                    <i class="fas fa-search"></i>
-                </button>
-            </form>
-            <button class="btn-cart" type="button" @click="isVisibleCart = !isVisibleCart">Корзина</button>
-            <div class="cart-block" v-show="isVisibleCart">
-                <div class="cart-item" v-for="el of cart" :key="el.id_product">
-                    <img :src = "imgCart" :alt="el.product_name">
-                    <div class="cart-text">
-                        <h3>{{ el.product_name }}</h3>
-                        <p>{{ el.price*el.quantity }} руб.</p>
-                        <p>Количество {{ el.quantity }}</p>
-                    </div>
-                    <button class="del-btn" data-id="${this.id_product}" @click="removeProduct(el)">&times;</button>
-                </div>
-                <h3 class="total">Сумма: {{ calcSum() }}</h3>
-            </div>
+            <search ref="search"></search>
+            <cart ref="cart"></cart>
         </header>
         <main>
-            <div class="products">
-                <div class="product-item" :class="isInvisible" v-for="el of products" :key="el.id_product">
-                    <img :src = "imgCatalog" :alt="el.product_name">
-                    <h3>{{ el.product_name }}</h3>
-                    <p>{{ el.price }}</p>
-                    <button class="buy-btn" @click="addProduct(el)">Купить</button>
-                </div>
-            </div>
+            <products ref="products"></products>
         </main>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/ProductsComponent.js"></script>
+    <script src="js/CartComponent.js"></script>
+    <script src="js/SearchComponent.js"></script>
     <script defer src="js/main.js"></script>
 </body>
 </html>
