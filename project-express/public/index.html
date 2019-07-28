@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Store</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/9aa34db6da.js"></script>
+</head>
+<body>
+    <div id="app">
+        <header class="header">
+            <div class="logo">AS-shop</div>
+            <search ref="search"></search>
+            <cart ref="cart"></cart>
+        </header>
+        <main>
+            <products ref="products"></products>
+            <error ref="error"></error>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/ProductsComponent.js"></script>
+    <script src="js/CartComponent.js"></script>
+    <script src="js/SearchComponent.js"></script>
+    <script src="js/ErrorComponent.js"></script>
+    <script defer src="js/main.js"></script>
+</body>
+</html>
